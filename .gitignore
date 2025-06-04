@@ -1,1 +1,38 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
 venv/
+ENV/
+env/
+.venv/
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables
+.env
+*.env
+
+# Log files
+*.log
+logs/
+
+# Uvicorn restart artifacts
+*.pid
+
+# MyPy / Pyright
+.mypy_cache/
+.pyright/
