@@ -36,3 +36,6 @@ logs/
 # MyPy / Pyright
 .mypy_cache/
 .pyright/
+
+
+*.db

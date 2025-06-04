@@ -1,11 +1,13 @@
+from sqlalchemy.orm import Session
 from app.models.user import User
+from app.schemas.userschema import UserCreate
 
-# Fake in-memory database for now
-fake_users_db = []
+def create_user(db: Session, user: UserCreate):
+    db_user = User(name=user.name, email=user.email)
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
 
-def get_all_users() -> list[User]:
-    return fake_users_db
-
-def create_user(user: User) -> User:
-    fake_users_db.append(user)
-    return user
+def get_all_users(db: Session):
+    return db.query(User).all()
